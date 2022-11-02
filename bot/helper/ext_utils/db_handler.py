@@ -4,7 +4,7 @@ from pymongo.errors import PyMongoError
 
 from bot import DB_URI, user_data, rss_dict, LOGGER, bot_id, config_dict, aria2_options
 
-class DbManger
+class DbManger:
     def __init__(self):
         self.__err = False
         self.__db = None
