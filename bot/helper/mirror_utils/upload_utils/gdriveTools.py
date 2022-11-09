@@ -614,7 +614,7 @@ class GoogleDriveHelper:
 
         msg = f"<b>Found {contents_count} result for <i>{fileName}</i></b>"
         buttons = ButtonMaker()
-        buttons.buildbutton("🔎 VIEW", f"https://telegra.ph/{path[0]}")
+        buttons.buildbutton("🔎 View List", f"https://telegra.ph/{path[0]}")
 
         return msg, buttons.build_menu(1)
 
