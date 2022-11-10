@@ -375,7 +375,7 @@ class GoogleDriveHelper:
                 msg += f'<b>📁 Name: </b><code>{meta.get("name")}</code>'
                 msg += f'\n<b>📦 Size: </b>{get_readable_file_size(self.transferred_size)}'
                 msg += '\n<b>🏷 Type: </b>Folder\n'
-                msg += f'<b>📂 SubFolders: </b>{self.__total_folders}\n'
+                msg += f'\n<b>📂 SubFolders: </b>{self.__total_folders}\n'
                 msg += f'<b>🗃 Files: </b>{self.__total_files}\n'
                 buttons = ButtonMaker()
                 buttons.buildbutton("☁️ Drive Link", durl)
@@ -636,7 +636,7 @@ class GoogleDriveHelper:
                 msg += f'<b>📁 Name: </b><code>{name}</code>\n'
                 msg += f'<b>📦 Size: </b>{get_readable_file_size(self.__total_bytes)}'
                 msg += '\n<b>🏷 Type: </b>Folder\n'
-                msg += f'<b>🗃 SubFolders: </b>{self.__total_folders}'
+                msg += f'\n<b>🗃 SubFolders: </b>{self.__total_folders}'
             else:
                 msg += f'<b>📁 Name: </b><code>{name}</code>'
                 if mime_type is None:
@@ -645,7 +645,7 @@ class GoogleDriveHelper:
                 self.__gDrive_file(meta)
                 msg += f'\n<b>📦 Size: </b>{get_readable_file_size(self.__total_bytes)}'
                 msg += f'\n<b>🏷 Type: </b>{mime_type}\n'
-            msg += f'<b>📂 Files: </b>{self.__total_files}\n'
+            msg += f'<b>\n📂 Files: </b>{self.__total_files}'
         except Exception as err:
             if isinstance(err, RetryError):
                 LOGGER.info(f"Total Attempts: {err.last_attempt.attempt_number}")
