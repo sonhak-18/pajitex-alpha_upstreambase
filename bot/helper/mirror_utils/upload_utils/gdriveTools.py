@@ -374,7 +374,7 @@ class GoogleDriveHelper:
                     return "your clone has been stopped and cloned data has been deleted!", "cancelled"
                 msg += f'<b>📁 Name: </b><code>{meta.get("name")}</code>'
                 msg += f'\n<b>📦 Size: </b>{get_readable_file_size(self.transferred_size)}'
-                msg += '<b>🏷 Type: </b>Folder\n'
+                msg += '\n<b>🏷 Type: </b>Folder\n'
                 msg += f'<b>📂 SubFolders: </b>{self.__total_folders}\n'
                 msg += f'<b>🗃 Files: </b>{self.__total_files}\n'
                 buttons = ButtonMaker()
@@ -392,7 +392,7 @@ class GoogleDriveHelper:
                 if mime_type is None:
                     mime_type = 'File'
                 msg += f'\n<b>📦 Size: </b>{get_readable_file_size(int(meta.get("size", 0)))}'
-                msg += f'<b>🏷 Type: </b>{mime_type}'
+                msg += f'\n<b>🏷 Type: </b>{mime_type}'
                 if INDEX_URL := config_dict['INDEX_URL']:
                     url_path = rquote(f'{file.get("name")}', safe='')
                     url = f'{INDEX_URL}/{url_path}'
@@ -634,8 +634,8 @@ class GoogleDriveHelper:
             if mime_type == self.__G_DRIVE_DIR_MIME_TYPE:
                 self.__gDrive_directory(meta)
                 msg += f'<b>📁 Name: </b><code>{name}</code>\n'
-                msg += f'<b>📦 Size: </b>{get_readable_file_size(self.__total_bytes)}\n'
-                msg += '<b>🏷 Type: </b>Folder\n'
+                msg += f'<b>📦 Size: </b>{get_readable_file_size(self.__total_bytes)}'
+                msg += '\n<b>🏷 Type: </b>Folder\n'
                 msg += f'<b>🗃 SubFolders: </b>{self.__total_folders}'
             else:
                 msg += f'<b>📁 Name: </b><code>{name}</code>'
@@ -644,7 +644,7 @@ class GoogleDriveHelper:
                 self.__total_files += 1
                 self.__gDrive_file(meta)
                 msg += f'\n<b>📦 Size: </b>{get_readable_file_size(self.__total_bytes)}'
-                msg += f'<b>🏷 Type: </b>{mime_type}\n'
+                msg += f'\n<b>🏷 Type: </b>{mime_type}\n'
             msg += f'<b>📂 Files: </b>{self.__total_files}\n'
         except Exception as err:
             if isinstance(err, RetryError):
