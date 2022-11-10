@@ -376,7 +376,7 @@ class GoogleDriveHelper:
                 msg += f'\n<b>📦 Size: </b>{get_readable_file_size(self.transferred_size)}'
                 msg += '\n<b>🏷 Type: </b>Folder\n'
                 msg += f'\n<b>📂 SubFolders: </b>{self.__total_folders}\n'
-                msg += f'<b>🗃 Files: </b>{self.__total_files}\n'
+                msg += f'<b>🗃 Files: </b>{self.__total_files}'
                 buttons = ButtonMaker()
                 buttons.buildbutton("☁️ Drive Link", durl)
                 if INDEX_URL := config_dict['INDEX_URL']:
