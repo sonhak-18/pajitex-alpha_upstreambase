@@ -156,7 +156,7 @@ def main():
                                 try:
                                     bot.editMessageText(msg, chat_id, msg_id, parse_mode='HTML', disable_web_page_preview=True)
                                 except:
-                                    pass 
+                                    pass
                                 osremove(".restartmsg")
                             else:
                                 try:
