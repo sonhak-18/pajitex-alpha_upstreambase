@@ -40,7 +40,7 @@ def load_config():
 
     TELEGRAM_HASH = environ.get('TELEGRAM_HASH', '')
     if len(TELEGRAM_HASH) == 0:
-        TELEGRAM_HASH = config_dict['TELEGRAM_HASH']
+        TELEGRAM_HASH = config_dict['TELEGRAM_HASH'] 
 
     OWNER_ID = environ.get('OWNER_ID', '')
     if len(OWNER_ID) == 0:
