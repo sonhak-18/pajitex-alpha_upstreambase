@@ -556,7 +556,7 @@ class GoogleDriveHelper:
                 msg += f'<h4>Search Result For {fileName}</h4>'
                 Title = True
             if drive_name:
-                msg += f"╾────────────╼<br><b>{drive_name}</b><br>╾────────────╼<br>"
+                msg += f"❏ <b>{drive_name}</b>"
             for file in response.get('files', []):
                 mime_type = file.get('mimeType')
                 if mime_type == "application/vnd.google-apps.folder":
